@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  LoginSwiftUI
-//
-//  Created by Lionel Camacho on 2021/01/16.
-//
-
 import UIKit
 
 @main
