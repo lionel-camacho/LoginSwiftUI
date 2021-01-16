@@ -16,7 +16,6 @@
 		05A037E825B2E5CD00CD698B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A037E725B2E5CD00CD698B /* Assets.xcassets */; };
 		05A037EB25B2E5CD00CD698B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A037EA25B2E5CD00CD698B /* Preview Assets.xcassets */; };
 		05A037EE25B2E5CD00CD698B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A037EC25B2E5CD00CD698B /* LaunchScreen.storyboard */; };
-		05A037F925B2E5CE00CD698B /* LoginSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A037F825B2E5CE00CD698B /* LoginSwiftUITests.swift */; };
 		05A0380425B2E5CE00CD698B /* LoginSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0380325B2E5CE00CD698B /* LoginSwiftUIUITests.swift */; };
 		05A0381825B2E67800CD698B /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0381725B2E67800CD698B /* EndpointType.swift */; };
 		05A0382025B2E69300CD698B /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0381F25B2E69300CD698B /* HttpMethod.swift */; };
@@ -60,7 +59,6 @@
 		05A037ED25B2E5CD00CD698B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05A037EF25B2E5CD00CD698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A037F425B2E5CD00CD698B /* LoginSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05A037F825B2E5CE00CD698B /* LoginSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUITests.swift; sourceTree = "<group>"; };
 		05A037FA25B2E5CE00CD698B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A037FF25B2E5CE00CD698B /* LoginSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A0380325B2E5CE00CD698B /* LoginSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIUITests.swift; sourceTree = "<group>"; };
@@ -119,6 +117,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0557FCAA25B3294F009DFE84 /* LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */,
+			);
+			path = LoginTests;
+			sourceTree = "<group>";
+		};
 		05A037D525B2E5CC00CD698B = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +169,8 @@
 		05A037F725B2E5CD00CD698B /* LoginSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				05A037F825B2E5CE00CD698B /* LoginSwiftUITests.swift */,
+				0557FCAA25B3294F009DFE84 /* LoginTests */,
 				05A037FA25B2E5CE00CD698B /* Info.plist */,
-				0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */,
 			);
 			path = LoginSwiftUITests;
 			sourceTree = "<group>";
@@ -392,7 +397,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0557FCA325B323A2009DFE84 /* LoginViewModelTests.swift in Sources */,
-				05A037F925B2E5CE00CD698B /* LoginSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
