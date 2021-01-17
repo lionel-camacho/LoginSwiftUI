@@ -10,7 +10,7 @@ extension UsersApi: EndpointType {
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .production, .qa, .staging:
-            return " https://jsonplaceholder.typicode.com/"
+            return "https://jsonplaceholder.typicode.com/"
         }
     }
     

@@ -40,4 +40,31 @@ struct NetworkManager {
             return .failure(NetworkResponse.failed.rawValue)
         }
     }
+    
+    //Move to its own file if more network calls are added
+    func getUsers(completion: @escaping (_ users: [User]?, _ error: String?)->()) {
+        router.request(.users) { (data, response, error) in
+            if error != nil {
+                completion(nil, "Error occured, please check network.")
+            }
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode([User].self, from: responseData)
+                        completion(apiResponse, nil)
+                    } catch {
+                        completion(nil, NetworkResponse.unableToDecode.rawValue)
+                    }
+                case .failure(let networkFailureError):
+                    completion(nil, networkFailureError)
+                }
+            }
+        }
+    }
 }

@@ -10,6 +10,7 @@
 		0557FC9225B317FD009DFE84 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9125B317FD009DFE84 /* LoginViewModel.swift */; };
 		0557FC9B25B31996009DFE84 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */; };
 		0557FCA325B323A2009DFE84 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */; };
+		0557FCB025B32FC4009DFE84 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FCAF25B32FC4009DFE84 /* User.swift */; };
 		05A037E225B2E5CD00CD698B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A037E125B2E5CD00CD698B /* AppDelegate.swift */; };
 		05A037E425B2E5CD00CD698B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A037E325B2E5CD00CD698B /* SceneDelegate.swift */; };
 		05A037E625B2E5CD00CD698B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A037E525B2E5CD00CD698B /* LoginView.swift */; };
@@ -50,6 +51,7 @@
 		0557FC9125B317FD009DFE84 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		0557FCAF25B32FC4009DFE84 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		05A037DE25B2E5CD00CD698B /* LoginSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A037E125B2E5CD00CD698B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05A037E325B2E5CD00CD698B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			path = LoginTests;
 			sourceTree = "<group>";
 		};
+		0557FCAE25B32F8F009DFE84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0557FCAF25B32FC4009DFE84 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		05A037D525B2E5CC00CD698B = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +158,10 @@
 		05A037E025B2E5CD00CD698B /* LoginSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				0557FC9925B3196D009DFE84 /* Helpers */,
 				0557FC9025B316B2009DFE84 /* Login */,
 				05A0381525B2E64300CD698B /* Networking */,
+				0557FCAE25B32F8F009DFE84 /* Model */,
+				0557FC9925B3196D009DFE84 /* Helpers */,
 				05A0381425B2E61000CD698B /* SupportingFiles */,
 				05A037EF25B2E5CD00CD698B /* Info.plist */,
 				05A037E925B2E5CD00CD698B /* Preview Content */,
@@ -388,6 +399,7 @@
 				0557FC9B25B31996009DFE84 /* ViewModelProtocol.swift in Sources */,
 				05A037E625B2E5CD00CD698B /* LoginView.swift in Sources */,
 				05A0383A25B2E72C00CD698B /* URLParameterEncoder.swift in Sources */,
+				0557FCB025B32FC4009DFE84 /* User.swift in Sources */,
 				05A0382A25B2E6C200CD698B /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
