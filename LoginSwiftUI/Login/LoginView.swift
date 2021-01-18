@@ -5,22 +5,36 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
     @ObservedObject var viewModel = ViewModel()
     
     var body: some View {
-        VStack {
-            welcomeTitle
-            appIcon
-            
-            usernameField
-            passwordField
-            
-            loginButton
+        NavigationView {
+            VStack {
+                welcomeTitle
+                appIcon
+                usernameField
+                passwordField
+                loginButton
+                    .disabled(!inputIsValid)
+                createNewAccountButton
+            }
+            .padding()
         }
-        .padding()
+    }
+    
+    private var inputIsValid: Bool {
+        return viewModel.usernameValid && viewModel.passwordValid
     }
     
     private var welcomeTitle: some View {
         Text(viewModel.welcomeTitle)
             .font(.largeTitle)
             .fontWeight(.semibold)
+            .padding(.bottom, 20)
+    }
+    
+    private var appIcon: some View {
+        Image(viewModel.appIconName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 80, height: 80)
             .padding(.bottom, 20)
     }
     
@@ -40,28 +54,46 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
             .padding(.bottom, 20)
     }
     
-    private var appIcon: some View {
-        Image(viewModel.appIconName)
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 150, height: 150)
-            .padding(.bottom, 75)
-    }
-    
     private var loginButton: some View {
         Button(action: {print("Button tapped")}) {
             Text(viewModel.loginButtonTitle)
                 .font(.headline)
+                .foregroundColor(loginButtonForegroundColor)
+                .padding()
+                .frame(width: 220, height: 40)
+                .background(loginButtonBackgroundColor)
+                .cornerRadius(15.0)
+        }
+    }
+    
+    private var createNewAccountButton: some View {
+        NavigationLink(destination: CreateNewAccountView<CreateNewAccountViewModel>()) {
+            Text(viewModel.createNewAccountButtonTitle)
+                .font(.headline)
                 .foregroundColor(.white)
                 .padding()
-                .frame(width: 220, height: 60)
+                .frame(width: 220, height: 40)
                 .background(Color.green)
                 .cornerRadius(15.0)
         }
     }
+    
+    private var loginButtonBackgroundColor: Color {
+        if !inputIsValid {
+            return viewModel.lightGreyColor
+        }
+        return .green
+    }
+    
+    private var loginButtonForegroundColor: Color {
+        if !inputIsValid {
+            return .gray
+        }
+        return .white
+    }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView<LoginViewModel>()
     }
