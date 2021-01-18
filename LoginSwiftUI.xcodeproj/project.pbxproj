@@ -30,6 +30,10 @@
 		05A0383F25B2E74B00CD698B /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0383E25B2E74B00CD698B /* JSONParameterEncoder.swift */; };
 		05A0384525B2E79700CD698B /* UsersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0384425B2E79700CD698B /* UsersEndpoint.swift */; };
 		05A0384B25B2E7F900CD698B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A0384A25B2E7F900CD698B /* NetworkManager.swift */; };
+		05FBD3C225B61BBD009D6F15 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBD3C125B61BBD009D6F15 /* UsersListView.swift */; };
+		05FBD3C725B61BDF009D6F15 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBD3C625B61BDF009D6F15 /* UsersListViewModel.swift */; };
+		05FBD3CC25B61BFD009D6F15 /* UsersDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBD3CB25B61BFD009D6F15 /* UsersDetailView.swift */; };
+		05FBD3D125B61C20009D6F15 /* UsersDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FBD3D025B61C20009D6F15 /* UsersDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		05A0383E25B2E74B00CD698B /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		05A0384425B2E79700CD698B /* UsersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersEndpoint.swift; sourceTree = "<group>"; };
 		05A0384A25B2E7F900CD698B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		05FBD3C125B61BBD009D6F15 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
+		05FBD3C625B61BDF009D6F15 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		05FBD3CB25B61BFD009D6F15 /* UsersDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailView.swift; sourceTree = "<group>"; };
+		05FBD3D025B61C20009D6F15 /* UsersDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +181,7 @@
 			children = (
 				0557FC9025B316B2009DFE84 /* Login */,
 				052D325625B5F6CD008444A5 /* Create New Account */,
+				05FBD3C025B61B83009D6F15 /* Users */,
 				05A0381525B2E64300CD698B /* Networking */,
 				0557FCAE25B32F8F009DFE84 /* Model */,
 				0557FC9925B3196D009DFE84 /* Helpers */,
@@ -267,6 +276,17 @@
 				05A0384A25B2E7F900CD698B /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		05FBD3C025B61B83009D6F15 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				05FBD3C125B61BBD009D6F15 /* UsersListView.swift */,
+				05FBD3C625B61BDF009D6F15 /* UsersListViewModel.swift */,
+				05FBD3CB25B61BFD009D6F15 /* UsersDetailView.swift */,
+				05FBD3D025B61C20009D6F15 /* UsersDetailViewModel.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,8 +432,12 @@
 				05A0382525B2E6A800CD698B /* HttpTask.swift in Sources */,
 				0557FC9B25B31996009DFE84 /* ViewModelProtocol.swift in Sources */,
 				05A037E625B2E5CD00CD698B /* LoginView.swift in Sources */,
+				05FBD3C725B61BDF009D6F15 /* UsersListViewModel.swift in Sources */,
 				052D326025B5F7C6008444A5 /* CreateNewAccountViewModel.swift in Sources */,
+				05FBD3C225B61BBD009D6F15 /* UsersListView.swift in Sources */,
+				05FBD3D125B61C20009D6F15 /* UsersDetailViewModel.swift in Sources */,
 				052D325825B5F74A008444A5 /* CreateNewAccountView.swift in Sources */,
+				05FBD3CC25B61BFD009D6F15 /* UsersDetailView.swift in Sources */,
 				05A0383A25B2E72C00CD698B /* URLParameterEncoder.swift in Sources */,
 				0557FCB025B32FC4009DFE84 /* User.swift in Sources */,
 				05A0382A25B2E6C200CD698B /* NetworkRouter.swift in Sources */,
