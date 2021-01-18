@@ -42,6 +42,7 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
             .background(viewModel.lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .textContentType(.oneTimeCode)
     }
     
     private var confirmPasswordField: some View {
@@ -50,6 +51,7 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
             .background(viewModel.lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .textContentType(.oneTimeCode)
     }
     
     private var countryPicker: some View {
@@ -65,7 +67,7 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
     }
     
     private var createButton: some View {
-        Button(action: {print("Button tapped")}) {
+        Button(action: {viewModel.saveAccountDetails()}) {
             Text(viewModel.createButtonTitle)
                 .font(.headline)
                 .foregroundColor(createButtonForegroundColor)
@@ -73,6 +75,9 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
                 .frame(width: 220, height: 40)
                 .background(createButtonBackgroundColor)
                 .cornerRadius(15.0)
+        }
+        .alert(isPresented: $viewModel.isShowingAlert) {
+            Alert(title: Text(viewModel.accountCreatedAlertTitle), message: Text(viewModel.accountCreatedAlertMessage), dismissButton: .default(Text(viewModel.accountCreatedAlertButtonTitle)))
         }
     }
     

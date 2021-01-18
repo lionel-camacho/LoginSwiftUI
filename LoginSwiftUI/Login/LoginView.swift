@@ -52,6 +52,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
             .background(viewModel.lightGreyColor)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .textContentType(.oneTimeCode)
     }
     
     private var loginButton: some View {

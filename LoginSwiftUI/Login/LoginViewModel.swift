@@ -27,13 +27,14 @@ class LoginViewModel: LoginViewModelProtocol {
     let welcomeTitle: String = "Welcome!"
     let appIconName: String = "Icon"
     let usernameTitle: String = "Username (min 2 letters)"
-    var usernameValid: Bool = false
     let passwordTitle: String = "Password (min 2 letters)"
-    var passwordValid: Bool = false
     let loginButtonTitle: String = "Login"
     let createNewAccountButtonTitle: String = "Create New Account"
     let networkManager: NetworkManager = NetworkManager()
     let usernameAndPasswordMinimumLength: Int = 2
+    
+    var usernameValid: Bool = false
+    var passwordValid: Bool = false
     
     @Published var username: String = "" {
         didSet {
