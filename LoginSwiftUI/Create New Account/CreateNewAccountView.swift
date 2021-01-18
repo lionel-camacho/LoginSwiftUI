@@ -15,7 +15,6 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
                 .disabled(!inputIsValid)
         }
         .padding()
-  
     }
     
     private var inputIsValid: Bool {

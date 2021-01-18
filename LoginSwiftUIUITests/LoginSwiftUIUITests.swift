@@ -1,10 +1,3 @@
-//
-//  LoginSwiftUIUITests.swift
-//  LoginSwiftUIUITests
-//
-//  Created by Lionel Camacho on 2021/01/16.
-//
-
 import XCTest
 
 class LoginSwiftUIUITests: XCTestCase {
