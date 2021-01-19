@@ -23,9 +23,11 @@ protocol UsersDetailViewModelProtocol: ViewModelProtocol {
     var catchPhraseTitle: String { get }
     var bsTitle: String { get }
     
-    var user: User? { get set }
-    var region: MKCoordinateRegion { get set }
-    var marker: Marker { get set }
+    var user: User! { get set }
+    var region: MKCoordinateRegion! { get set }
+    var marker: Marker! { get set }
+    
+    init(user: User)
 }
 
 class UsersDetailViewModel: UsersDetailViewModelProtocol {
@@ -44,16 +46,15 @@ class UsersDetailViewModel: UsersDetailViewModelProtocol {
     let catchPhraseTitle = "Catch Phrase: "
     let bsTitle = "Bs: "
     
-    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.9, longitudeDelta: 0.9))
-    @Published var marker = Marker(location: MapMarker(coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), tint: .green))
+    @Published var region: MKCoordinateRegion!
+    @Published var marker: Marker!
     
-    
-    var user: User? = nil
+    var user: User!
     
     required init() {
     }
     
-    required init(user: User) {
+    required public init(user: User) {
         self.user = user
         if let latitudeString = self.user?.address.geo.lat,
            let longitudeString = self.user?.address.geo.lng,

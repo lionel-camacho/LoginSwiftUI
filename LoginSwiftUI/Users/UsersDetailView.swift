@@ -24,23 +24,23 @@ struct UsersDetailView<ViewModel: UsersDetailViewModelProtocol>: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text(viewModel.nameTitle)
-                Text(viewModel.user!.name)
+                Text(viewModel.user.name)
             }
             HStack {
                 Text(viewModel.usernameTitle)
-                Text(viewModel.user!.username)
+                Text(viewModel.user.username)
             }
             HStack {
                 Text(viewModel.emailTitle)
-                Text(viewModel.user!.email)
+                Text(viewModel.user.email)
             }
             HStack {
                 Text(viewModel.phoneTitle)
-                Text(viewModel.user!.phone)
+                Text(viewModel.user.phone)
             }
             HStack {
                 Text(viewModel.websiteTitle)
-                Text(viewModel.user!.website.absoluteString)
+                Text(viewModel.user.website.absoluteString)
             }
         }
     }
@@ -49,19 +49,19 @@ struct UsersDetailView<ViewModel: UsersDetailViewModelProtocol>: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text(viewModel.cityTitle)
-                Text(viewModel.user!.address.city)
+                Text(viewModel.user.address.city)
             }
             HStack {
                 Text(viewModel.streetTitle)
-                Text(viewModel.user!.address.street)
+                Text(viewModel.user.address.street)
             }
             HStack {
                 Text(viewModel.suiteTitle)
-                Text(viewModel.user!.address.suite)
+                Text(viewModel.user.address.suite)
             }
             HStack {
                 Text(viewModel.zipcodeTitle)
-                Text(viewModel.user!.address.zipcode)
+                Text(viewModel.user.address.zipcode)
             }
         }
     }
@@ -70,17 +70,17 @@ struct UsersDetailView<ViewModel: UsersDetailViewModelProtocol>: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text(viewModel.companyTitle)
-                Text(viewModel.user!.company.name)
+                Text(viewModel.user.company.name)
             }
             HStack(alignment: .top) {
                 Text(viewModel.catchPhraseTitle)
-                Text(viewModel.user!.company.catchPhrase)
+                Text(viewModel.user.company.catchPhrase)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
             }
             HStack {
                 Text(viewModel.bsTitle)
-                Text(viewModel.user!.company.bs)
+                Text(viewModel.user.company.bs)
             }
         }
     }

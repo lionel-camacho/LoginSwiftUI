@@ -11,6 +11,8 @@
 		052D326025B5F7C6008444A5 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D325F25B5F7C6008444A5 /* CreateNewAccountViewModel.swift */; };
 		053D1B4125B6BFC900D15422 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1B4025B6BFC900D15422 /* View+Extensions.swift */; };
 		053D1B5025B6FF9900D15422 /* CreateNewAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1B4F25B6FF9900D15422 /* CreateNewAccountViewModelTests.swift */; };
+		053D1B5625B708BC00D15422 /* UsersListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1B5525B708BC00D15422 /* UsersListViewModelTests.swift */; };
+		053D1B5E25B70B3000D15422 /* UsersDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1B5D25B70B3000D15422 /* UsersDetailViewModelTests.swift */; };
 		0557FC9225B317FD009DFE84 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9125B317FD009DFE84 /* LoginViewModel.swift */; };
 		0557FC9B25B31996009DFE84 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */; };
 		0557FCA325B323A2009DFE84 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */; };
@@ -60,6 +62,8 @@
 		052D325F25B5F7C6008444A5 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
 		053D1B4025B6BFC900D15422 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		053D1B4F25B6FF9900D15422 /* CreateNewAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModelTests.swift; sourceTree = "<group>"; };
+		053D1B5525B708BC00D15422 /* UsersListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModelTests.swift; sourceTree = "<group>"; };
+		053D1B5D25B70B3000D15422 /* UsersDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDetailViewModelTests.swift; sourceTree = "<group>"; };
 		0557FC9125B317FD009DFE84 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			path = "Create New Account Tests";
 			sourceTree = "<group>";
 		};
+		053D1B5425B7089200D15422 /* Users Tests */ = {
+			isa = PBXGroup;
+			children = (
+				053D1B5525B708BC00D15422 /* UsersListViewModelTests.swift */,
+				053D1B5D25B70B3000D15422 /* UsersDetailViewModelTests.swift */,
+			);
+			path = "Users Tests";
+			sourceTree = "<group>";
+		};
 		0557FC9025B316B2009DFE84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,8 +237,9 @@
 		05A037F725B2E5CD00CD698B /* LoginSwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				053D1B4B25B6F5E200D15422 /* Create New Account Tests */,
 				0557FCAA25B3294F009DFE84 /* Login Tests */,
+				053D1B4B25B6F5E200D15422 /* Create New Account Tests */,
+				053D1B5425B7089200D15422 /* Users Tests */,
 				05A037FA25B2E5CE00CD698B /* Info.plist */,
 			);
 			path = LoginSwiftUITests;
@@ -472,6 +486,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0557FCA325B323A2009DFE84 /* LoginViewModelTests.swift in Sources */,
+				053D1B5625B708BC00D15422 /* UsersListViewModelTests.swift in Sources */,
+				053D1B5E25B70B3000D15422 /* UsersDetailViewModelTests.swift in Sources */,
 				053D1B5025B6FF9900D15422 /* CreateNewAccountViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
