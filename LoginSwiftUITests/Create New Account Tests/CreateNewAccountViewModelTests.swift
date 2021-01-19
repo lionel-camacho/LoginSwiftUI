@@ -79,4 +79,34 @@ class CreateNewAccountViewModelTests: XCTestCase {
         systemUnderTest.password = "Pa"
         XCTAssertTrue(systemUnderTest.passwordValid)
     }
+    
+    func testCreateNewAccountViewModelConfirmPasswordValidation() throws {
+        systemUnderTest.password = ""
+        systemUnderTest.confirmPassword = ""
+        XCTAssertFalse(systemUnderTest.confirmPasswordValid)
+        
+        systemUnderTest.password = "P"
+        systemUnderTest.confirmPassword = "P"
+        XCTAssertFalse(systemUnderTest.confirmPasswordValid)
+        
+        systemUnderTest.password = "Pa"
+        systemUnderTest.confirmPassword = "P"
+        XCTAssertFalse(systemUnderTest.confirmPasswordValid)
+        
+        systemUnderTest.password = "Pa"
+        systemUnderTest.confirmPassword = "Pa"
+        XCTAssertTrue(systemUnderTest.confirmPasswordValid)
+    }
+    
+    func testCreateNewAccountViewModelSaveAccountDetails() throws {
+        XCTAssertFalse(systemUnderTest.isShowingAccountCreatedAlert)
+        
+        systemUnderTest.username = "TestUsername"
+        systemUnderTest.password = "TestPassword"
+        systemUnderTest.saveAccountDetails()
+        
+        XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), systemUnderTest.username)
+        XCTAssertEqual(UserDefaults.standard.string(forKey: "password"), systemUnderTest.password)
+        XCTAssertTrue(systemUnderTest.isShowingAccountCreatedAlert)
+    }
 }
