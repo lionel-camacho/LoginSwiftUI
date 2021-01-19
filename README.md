@@ -18,4 +18,5 @@ What I would imporve given more time:
 - Add a screen where the logged in user can update their persisted details
 - Add UI tests
 - Refactor to remove some duplication
+- Mock the service request and add more tests for networking and consuming the service
 
