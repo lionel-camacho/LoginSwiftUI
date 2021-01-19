@@ -76,7 +76,7 @@ struct CreateNewAccountView<ViewModel: CreateNewAccountViewModelProtocol>: View 
                 .background(createButtonBackgroundColor)
                 .cornerRadius(15.0)
         }
-        .alert(isPresented: $viewModel.isShowingAlert) {
+        .alert(isPresented: $viewModel.isShowingAccountCreatedAlert) {
             Alert(title: Text(viewModel.accountCreatedAlertTitle), message: Text(viewModel.accountCreatedAlertMessage), dismissButton: .default(Text(viewModel.accountCreatedAlertButtonTitle)))
         }
     }

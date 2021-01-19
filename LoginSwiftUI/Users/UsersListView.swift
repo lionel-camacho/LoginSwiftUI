@@ -6,7 +6,7 @@ struct UsersListView<ViewModel: UsersListViewModelProtocol>: View {
     
     var body: some View {
         NavigationView {
-
+            Text("Placeholder")
         }
     }
 }

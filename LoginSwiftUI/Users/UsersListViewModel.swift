@@ -11,13 +11,13 @@ protocol UsersListViewModelProtocol: ViewModelProtocol {
 
 class UsersListViewModel: UsersListViewModelProtocol {
     
-    let networkManager: NetworkManager = NetworkManager()
-    let usernameAndPasswordMinimumLength: Int = 2
+    let networkManager = NetworkManager()
     
     var usersResponse: [User]? = nil
     
     required init() {
         getUsers { (error) in
+            //TODO: Handle error
         }
     }
     

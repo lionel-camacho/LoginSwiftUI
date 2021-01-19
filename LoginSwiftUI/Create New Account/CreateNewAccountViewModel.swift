@@ -23,52 +23,52 @@ protocol CreateNewAccountViewModelProtocol: ViewModelProtocol {
     var confirmPasswordValid: Bool { get set }
     var selectedCountryIndex: Int { get set }
     var selectedCountryValid: Bool { get set }
-    var isShowingAlert: Bool { get set }
+    var isShowingAccountCreatedAlert: Bool { get set }
     
     func saveAccountDetails()
 }
 
 class CreateNewAccountViewModel: CreateNewAccountViewModelProtocol {
-
+    
     let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-    let createAccountTitle: String = "Create Account"
-    let usernameTitle: String = "Username (min 2 letters)"
-    let passwordTitle: String = "Password (min 2 letters)"
-    let createButtonTitle: String = "Create!"
-    let usernameAndPasswordMinimumLength: Int = 2
+    let createAccountTitle = "Create Account"
+    let usernameTitle = "Username (min 2 letters)"
+    let passwordTitle = "Password (min 2 letters)"
+    let createButtonTitle = "Create!"
+    let usernameAndPasswordMinimumLength = 2
     let countryTitle = "Country"
-    let accountCreatedAlertTitle: String = "Account created!"
-    let accountCreatedAlertMessage: String = "Your account has been created, you can use your username and password to login."
-    let accountCreatedAlertButtonTitle: String = "Got it!"
+    let accountCreatedAlertTitle = "Account created!"
+    let accountCreatedAlertMessage = "Your account has been created, you can use your username and password to login."
+    let accountCreatedAlertButtonTitle = "Got it!"
     
-    var passwordValid: Bool = false
-    var usernameValid: Bool = false
-    var countries: [String] = ["None", "Portugal", "Singapore", "South Africa"]
-    var selectedCountryValid: Bool = false
-    var confirmPasswordTitle: String = "Confirm Password"
-    var confirmPasswordValid: Bool = false
+    var passwordValid = false
+    var usernameValid = false
+    var countries = ["None", "Portugal", "Singapore", "South Africa"]
+    var selectedCountryValid = false
+    var confirmPasswordTitle = "Confirm Password"
+    var confirmPasswordValid = false
     
-    @Published var isShowingAlert: Bool = false
+    @Published var isShowingAccountCreatedAlert = false
     
-    @Published var selectedCountryIndex: Int = 0 {
+    @Published var selectedCountryIndex = 0 {
         didSet {
             selectedCountryValid = selectedCountryIndex > 0
         }
     }
     
-    @Published var username: String = "" {
+    @Published var username = "" {
         didSet {
             usernameValid = username.count >= usernameAndPasswordMinimumLength
         }
     }
     
-    @Published var password: String = "" {
+    @Published var password = "" {
         didSet {
             passwordValid = password.count >= usernameAndPasswordMinimumLength
         }
     }
     
-    @Published var confirmPassword: String = "" {
+    @Published var confirmPassword = "" {
         didSet {
             confirmPasswordValid = confirmPassword.count >= usernameAndPasswordMinimumLength && confirmPassword == password
         }
@@ -81,6 +81,6 @@ class CreateNewAccountViewModel: CreateNewAccountViewModelProtocol {
         UserDefaults.standard.set(username, forKey: "username")
         UserDefaults.standard.set(password, forKey: "password")
         UserDefaults.standard.set(countries[selectedCountryIndex], forKey: "country")
-        isShowingAlert = true
+        isShowingAccountCreatedAlert = true
     }
 }

@@ -14,8 +14,10 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                 loginButton
                     .disabled(!inputIsValid)
                 createNewAccountButton
+                NavigationLink(destination: UsersListView<UsersListViewModel>(), isActive: $viewModel.isAuthenticated){}
             }
             .padding()
+       
         }
     }
     
@@ -56,7 +58,7 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
     }
     
     private var loginButton: some View {
-        Button(action: {print("Button tapped")}) {
+        Button(action: {viewModel.authenticate()}) {
             Text(viewModel.loginButtonTitle)
                 .font(.headline)
                 .foregroundColor(loginButtonForegroundColor)
@@ -64,6 +66,12 @@ struct LoginView<ViewModel: LoginViewModelProtocol>: View {
                 .frame(width: 220, height: 40)
                 .background(loginButtonBackgroundColor)
                 .cornerRadius(15.0)
+        }
+        .alert(isPresented: $viewModel.isShowingUsernameOrPasswordErrorAlert) {
+            Alert(title: Text(viewModel.usernameOrPasswordErrorAlertTitle), message: Text(viewModel.usernameOrPasswordErrorAlertMessage), dismissButton: .default(Text(viewModel.okButtonTitle)))
+        }
+        .alert(isPresented: $viewModel.isShowingNoAccountErrorAlert) {
+            Alert(title: Text(viewModel.noAccountErrorAlertTitle), message: Text(viewModel.noAccountErrorAlertMessage), dismissButton: .default(Text(viewModel.okButtonTitle)))
         }
     }
     

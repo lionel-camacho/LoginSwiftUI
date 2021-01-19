@@ -132,12 +132,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		0557FC9925B3196D009DFE84 /* Helpers */ = {
+		0557FC9925B3196D009DFE84 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */,
 			);
-			path = Helpers;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0557FCAA25B3294F009DFE84 /* LoginTests */ = {
@@ -184,7 +184,7 @@
 				05FBD3C025B61B83009D6F15 /* Users */,
 				05A0381525B2E64300CD698B /* Networking */,
 				0557FCAE25B32F8F009DFE84 /* Model */,
-				0557FC9925B3196D009DFE84 /* Helpers */,
+				0557FC9925B3196D009DFE84 /* Protocols */,
 				05A0381425B2E61000CD698B /* SupportingFiles */,
 				05A037EF25B2E5CD00CD698B /* Info.plist */,
 				05A037E925B2E5CD00CD698B /* Preview Content */,
