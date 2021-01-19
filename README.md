@@ -1,4 +1,5 @@
 # LoginSwiftUI
+
 A sample app demonstrating:
 - SwiftUI login screen
 - SwiftUI account creation screen
@@ -15,4 +16,6 @@ A sample app demonstrating:
 What I would imporve given more time:
 - Persist data using Realm instead of UserDefaults
 - Add a screen where the logged in user can update their persisted details
+- Add UI tests
+- Refactor to remove some duplication
 
