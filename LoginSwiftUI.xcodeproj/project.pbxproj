@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		052D325825B5F74A008444A5 /* CreateNewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D325725B5F74A008444A5 /* CreateNewAccountView.swift */; };
 		052D326025B5F7C6008444A5 /* CreateNewAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052D325F25B5F7C6008444A5 /* CreateNewAccountViewModel.swift */; };
+		053D1B4125B6BFC900D15422 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D1B4025B6BFC900D15422 /* View+Extensions.swift */; };
 		0557FC9225B317FD009DFE84 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9125B317FD009DFE84 /* LoginViewModel.swift */; };
 		0557FC9B25B31996009DFE84 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */; };
 		0557FCA325B323A2009DFE84 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		052D325725B5F74A008444A5 /* CreateNewAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountView.swift; sourceTree = "<group>"; };
 		052D325F25B5F7C6008444A5 /* CreateNewAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAccountViewModel.swift; sourceTree = "<group>"; };
+		053D1B4025B6BFC900D15422 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		0557FC9125B317FD009DFE84 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0557FC9A25B31996009DFE84 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		0557FCA225B323A2009DFE84 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = "Create New Account";
 			sourceTree = "<group>";
 		};
+		053D1B3F25B6BFAF00D15422 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				053D1B4025B6BFC900D15422 /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0557FC9025B316B2009DFE84 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 				05A0381525B2E64300CD698B /* Networking */,
 				0557FCAE25B32F8F009DFE84 /* Model */,
 				0557FC9925B3196D009DFE84 /* Protocols */,
+				053D1B3F25B6BFAF00D15422 /* Extensions */,
 				05A0381425B2E61000CD698B /* SupportingFiles */,
 				05A037EF25B2E5CD00CD698B /* Info.plist */,
 				05A037E925B2E5CD00CD698B /* Preview Content */,
@@ -427,6 +438,7 @@
 				05A037E225B2E5CD00CD698B /* AppDelegate.swift in Sources */,
 				0557FC9225B317FD009DFE84 /* LoginViewModel.swift in Sources */,
 				05A0383F25B2E74B00CD698B /* JSONParameterEncoder.swift in Sources */,
+				053D1B4125B6BFC900D15422 /* View+Extensions.swift in Sources */,
 				05A0382025B2E69300CD698B /* HttpMethod.swift in Sources */,
 				05A037E425B2E5CD00CD698B /* SceneDelegate.swift in Sources */,
 				05A0382525B2E6A800CD698B /* HttpTask.swift in Sources */,
