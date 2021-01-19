@@ -6,11 +6,18 @@ struct UsersListView<ViewModel: UsersListViewModelProtocol>: View {
     
     var body: some View {
         NavigationView {
-            failedToLoadUsersView
-                .isHidden(!viewModel.errorOccured)
-            ProgressView(viewModel.fetchingUsersTitle)
-                .isHidden(!viewModel.isLoadingUsers)
+            VStack {
+                failedToLoadUsersView
+                    .isHidden(!viewModel.errorOccured, remove: !viewModel.errorOccured)
+                ProgressView(viewModel.fetchingUsersTitle)
+                    .isHidden(!viewModel.isLoadingUsers, remove: !viewModel.isLoadingUsers)
+                List(viewModel.usersResponse) { user in
+                    UserCell(user: user)
+                }
+                .isHidden(viewModel.errorOccured || viewModel.isLoadingUsers, remove: viewModel.errorOccured || viewModel.isLoadingUsers)
+            }
         }
+        .navigationBarTitle(viewModel.navigationBarTitle)
         .navigationBarBackButtonHidden(true)
     }
     
@@ -35,5 +42,19 @@ struct UsersListView<ViewModel: UsersListViewModelProtocol>: View {
 struct UsersListView_Previews: PreviewProvider {
     static var previews: some View {
         UsersListView<UsersListViewModel>()
+    }
+}
+
+struct UserCell: View {
+    let user: User
+    var body: some View {
+        return NavigationLink(destination: UsersDetailView(viewModel: UsersDetailViewModel(user: user))) {
+            VStack(alignment: .leading) {
+                Text(user.name)
+                Text(user.website.absoluteString)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+        }
     }
 }

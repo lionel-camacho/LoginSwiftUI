@@ -7,8 +7,9 @@ protocol UsersListViewModelProtocol: ViewModelProtocol {
     var failedToLoadUsersMessage: String { get }
     var retryButtonTitle: String { get }
     var fetchingUsersTitle: String { get }
+    var navigationBarTitle: String { get }
     
-    var usersResponse: [User]? { get set }
+    var usersResponse: [User] { get set }
     var isLoadingUsers: Bool { get set }
     var errorOccured: Bool { get set }
     
@@ -22,9 +23,9 @@ class UsersListViewModel: UsersListViewModelProtocol {
     let failedToLoadUsersMessage = "An error occured while attempting to load users, please ensure you are connected to wifi or a mobile connection and try again."
     let retryButtonTitle = "Retry"
     let fetchingUsersTitle = "Fetching users…"
+    let navigationBarTitle = "Users"
     
-    var usersResponse: [User]? = nil
-    
+    @Published var usersResponse: [User] = []
     @Published var isLoadingUsers = false
     @Published var errorOccured = false
     
@@ -47,8 +48,8 @@ class UsersListViewModel: UsersListViewModelProtocol {
                 return
             }
             if let users = response {
-                self?.usersResponse = users
                 DispatchQueue.main.async { [weak self] in
+                    self?.usersResponse = users
                     self?.errorOccured = false
                 }
                 completion(nil)

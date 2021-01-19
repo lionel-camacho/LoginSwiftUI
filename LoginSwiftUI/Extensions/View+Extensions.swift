@@ -1,9 +1,11 @@
 import SwiftUI
 
 extension View {
-    @ViewBuilder func isHidden(_ isHidden: Bool) -> some View {
-        if isHidden {
-            self.hidden()
+    @ViewBuilder func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
+        if hidden {
+            if !remove {
+                self.hidden()
+            }
         } else {
             self
         }
