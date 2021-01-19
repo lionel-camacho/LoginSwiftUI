@@ -42,7 +42,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertEqual(2, systemUnderTest.usernameAndPasswordMinimumLength)
     }
     
-    func testUsernameValidation() throws {
+    func testLoginViewModelUsernameValidation() throws {
         systemUnderTest.username = ""
         XCTAssertFalse(systemUnderTest.usernameValid)
         
@@ -53,7 +53,7 @@ class LoginViewModelTests: XCTestCase {
         XCTAssertTrue(systemUnderTest.usernameValid)
     }
     
-    func testPasswordValidation() throws {
+    func testLoginViewModelPasswordValidation() throws {
         systemUnderTest.password = ""
         XCTAssertFalse(systemUnderTest.passwordValid)
         
@@ -62,5 +62,25 @@ class LoginViewModelTests: XCTestCase {
         
         systemUnderTest.password = "Pa"
         XCTAssertTrue(systemUnderTest.passwordValid)
+    }
+    
+    func testLoginViewModelReturnsExpectedUsernameOrPasswordErrorAlertTitle() throws {
+        XCTAssertEqual("Username or Password incorrect", systemUnderTest.usernameOrPasswordErrorAlertTitle)
+    }
+    
+    func testLoginViewModelReturnsExpectedUsernameOrPasswordErrorAlertMessage() throws {
+        XCTAssertEqual("Your username or password is incorrect, please try again.", systemUnderTest.usernameOrPasswordErrorAlertMessage)
+    }
+    
+    func testLoginViewModelReturnsExpectedOkButtonTitle() throws {
+        XCTAssertEqual("OK", systemUnderTest.okButtonTitle)
+    }
+    
+    func testLoginViewModelReturnsExpectedNoAccountErrorAlertTitle() throws {
+        XCTAssertEqual("No account found", systemUnderTest.noAccountErrorAlertTitle)
+    }
+    
+    func testLoginViewModelReturnsExpectedNoAccountErrorAlertMessage() throws {
+        XCTAssertEqual("No account was found, please create a new account and try again.", systemUnderTest.noAccountErrorAlertMessage)
     }
 }

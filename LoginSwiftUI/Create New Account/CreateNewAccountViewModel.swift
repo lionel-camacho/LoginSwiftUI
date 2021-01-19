@@ -13,12 +13,13 @@ protocol CreateNewAccountViewModelProtocol: ViewModelProtocol {
     var accountCreatedAlertTitle: String { get }
     var accountCreatedAlertMessage: String { get }
     var accountCreatedAlertButtonTitle: String { get }
+    var confirmPasswordTitle: String { get }
     
     var username: String { get set }
     var usernameValid: Bool { get set }
     var password: String { get set }
     var passwordValid: Bool { get set }
-    var confirmPasswordTitle: String { get set }
+    
     var confirmPassword: String { get set }
     var confirmPasswordValid: Bool { get set }
     var selectedCountryIndex: Int { get set }
@@ -40,12 +41,12 @@ class CreateNewAccountViewModel: CreateNewAccountViewModelProtocol {
     let accountCreatedAlertTitle = "Account created!"
     let accountCreatedAlertMessage = "Your account has been created, you can use your username and password to login."
     let accountCreatedAlertButtonTitle = "Got it!"
+    let confirmPasswordTitle = "Confirm Password"
+    let countries = ["None", "Portugal", "Singapore", "South Africa"]
     
     var passwordValid = false
     var usernameValid = false
-    var countries = ["None", "Portugal", "Singapore", "South Africa"]
     var selectedCountryValid = false
-    var confirmPasswordTitle = "Confirm Password"
     var confirmPasswordValid = false
     
     @Published var isShowingAccountCreatedAlert = false
